@@ -6,18 +6,19 @@ var edad;
 
 edad=parseInt(document.getElementById("edad").value);
 
- if(edad>18){
-    alert("mayor de edad");
+if(edad>=18){
+
+    alert("Usted es mayor de edad");
+
 }
-    else if(edad>=13){
 
-        alert("adolescente")
-    }
+else if (edad>=13){
+    alert("Es adolescente");
+}
 
-    else alert("niño");
-
-
-
+else{
+    alert("es niño");
+}
 
 
 
