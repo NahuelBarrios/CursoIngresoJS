@@ -1,64 +1,45 @@
-function mostrar()
-{
+function mostrar() {
 
-	var contador=0;
-	var positivo=0;
-	var negativo=1;
-	var i=0;
-	var respuesta="si";
-	var suma;
-	var multi;
+	var contador = 0;
+	var positivo = 0;
+	var negativo = 1;
+	var respuesta = 's';
+	var numero;
 
 
+	do {
 
-	i=prompt("Ingrese Numero: ");
+		numero = parseInt(prompt("Ingrese Numero: "));
 
-	while(i == "si"){
+		if (numero >= 0) {
 
-		if(i>0){
-
-			sumar= positivo + positivo;
-
-
+			positivo = positivo + numero;
 		}
-		
-		else{
 
-			multi= negativo * negativo;
+		else {
 
-			
+			negativo = negativo * numero;
 		}
-		
-		
-		
-		i=prompt("Quiere ingresar otro numero?: ");
 
-		contador ++;
 
-		
+		respuesta = prompt("Quiere ingresar otro numero?")
 
 
 
-
-
-		
-
-		
+	} while (respuesta == 's');
 
 
 
 
 
 
-	}
-
-	
 
 
+document.getElementById("suma").value = positivo;
 
-
-
-document.getElementById("suma").value=positivo;
-document.getElementById("producto").value=negativo;
+if(contador=='s'){
+	negativo=0;
+}
+document.getElementById("producto").value = negativo;
 
 }//FIN DE LA FUNCIÓN
