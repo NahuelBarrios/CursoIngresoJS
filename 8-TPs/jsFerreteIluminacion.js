@@ -11,8 +11,8 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 function CalcularPrecio() {
 
     //Todas las lamparas estan $35
-    var cantlamp;
-    var marca;
+    var cantlamp = parseFloat(document.getElementById("Cantidad").value);
+    var marca = document.getElementById("Marca").value;
     var desc;
     var precio = 35;
     var preciototal;
@@ -22,143 +22,125 @@ function CalcularPrecio() {
 
 
 
-    cantlamp = parseInt(document.getElementById("Cantidad").value);
-
-    marca = document.getElementById("Marca").value;
-
-    desc = parseInt(document.getElementById("precioDescuento").value);
-
-   
 
 
 
-    //A
+    switch (cantlamp) {
 
-    if (cantlamp >= 6) {
+        case 1:
+        case 2:
 
-        preciototal = cantlamp * precio;
+            preciofinal = precio * cantlamp;
+            
 
-        desc = preciototal * 0.5;
+            break;
 
-        preciofinal = preciototal - desc;
+        case 3:
 
-    }
+            if (marca == "ArgentinaLuz") {
 
-    //B
-    else if (cantlamp == 5) {
-
-        switch ("Marca") {
-
-
-            case "Argentinaluz":
-
-                preciototal = cantlamp * precio;
-
-                desc = preciototal * 0.4;
-
-                preciofinal = preciototal - desc;
-
-                break;
-
-            default: preciototal = cantlamp * precio;
-
-                desc = preciototal * 0.3;
-
-                preciofinal = preciototal - desc;
-
-
-        }
-
-
-
-    }
-
-    //C
-
-    else if (cantlamp == 4) {
-
-        switch ("Marca") {
-
-            case "ArgentinaLuz":
-            case "FelipeLamparas":
-
-                preciototal = cantlamp * precio;
-
-                desc = preciototal * .25;
-
-                preciofinal = preciototal - desc;
-
-                break;
-
-            default: preciototal = cantlamp * precio;
-
-                desc = preciototal * .20;
-
-                preciofinal = preciototal - desc;
-
-
-        }
-
-
-
-    }
-
-
-    //D
-
-    else if (cantlamp == 3) {
-
-        switch ("Marca") {
-
-            case "ArgentinaLuz":
-                preciototal = cantlamp * precio;
+                preciototal = precio * cantlamp;
 
                 desc = preciototal * .15;
 
                 preciofinal = preciototal - desc;
 
-                break;
 
+            }
 
-            case "FelipeLamparas":
+            else if (marca == "FelipeLamparas") {
 
-                preciototal = cantlamp * precio;
+                preciototal = precio * cantlamp;
 
                 desc = preciototal * .10;
 
                 preciofinal = preciototal - desc;
 
-                break;
+            }
 
-            default: preciototal = cantlamp * precio;
+            else {
 
-                desc = preciototal * .5;
+                preciototal = precio * cantlamp;
+
+                desc = preciototal * .05;
 
                 preciofinal = preciototal - desc;
-        }
+
+            }
+
+            break;
+
+
+        case 4:
+
+            if (marca == "ArgentinaLuz" || "FelipeLamparas") {
+
+                preciototal = precio * cantlamp;
+
+                desc = preciototal * .25;
+
+                preciofinal = preciototal - desc;
+
+            }
+
+            else {
+
+                preciototal = precio * cantlamp;
+
+                desc = preciototal * .20;
+
+                preciofinal = preciototal - desc;
+
+            }
+
+            break;
+
+
+        case 5:
+
+            if (marca == "ArgentinaLuz") {
+
+                preciototal = precio * cantlamp;
+
+                desc = preciototal * .40;
+
+                preciofinal = preciototal - desc;
+
+            }
+
+            else {
+                preciototal = precio * cantlamp;
+
+                desc = preciototal * .30;
+
+                preciofinal = preciototal - desc;
+
+            }
+
+            break;
+
+        default:
+
+            preciototal = precio * cantlamp;
+
+            desc = preciototal * .50;
+
+            preciofinal = preciototal - desc;
 
     }
 
 
+    if (preciofinal > 120) {
 
+        impuesto = preciofinal * .10;
 
+        alert("IIBB Usted pago: " + impuesto);
 
-
-    if(preciofinal>120){
-
-        impuesto= preciofinal * .10;
-
-        preciofinal= preciofinal + impuesto;
-
-        alert("IIBB Usted pago: "+ impuesto );
 
     }
 
-    
 
-
-
-    
+document.getElementById("precioDescuento").value= desc;
 
 
 
