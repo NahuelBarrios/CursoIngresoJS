@@ -55,7 +55,7 @@ superficie = largo * ancho;
 Bolsacal= 3 * superficie;
 Bolsacemento = 2 * superficie;
 
-alert("Para una superficie de " + superficie + " m2 necesito /n " + Bolsacemento + " Bolsas de cemento. Y  " + Bolsacal + " Bolsa de cal");
+alert("Para una superficie de " + superficie + " m2 necesito \n " + Bolsacemento + " Bolsas de cemento. Y  " + Bolsacal + " Bolsa de cal");
 
 
 

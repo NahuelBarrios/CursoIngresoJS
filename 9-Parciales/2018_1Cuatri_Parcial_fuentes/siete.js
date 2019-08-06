@@ -1,40 +1,79 @@
 function mostrar() {
-    var notas;
-    var cantalumnos = 0;
-    var cantnotas = 0;
-    var contador = 0;
+
+
+    var contador;
+    var nota = 0;
     var sexo;
     var suma = 0;
     var promedio;
+    var notabaja = 0;
+    var sexobaja = 0;
+    var flag = 0;
+    var notav6 = 0;
 
 
 
-    while (contador < 5) {
 
-        notas = parseInt(prompt("Ingrese su nota "));
 
-        while (!(notas >= 0 || notas <= 10)) {
+    for (contador = 0; contador < 5; contador++) {
 
-            notas = parseInt(prompt("No es una nota vaida. Ingrese valores del 0 al 10"));
+        nota = parseInt(prompt("Ingrese su nota"));
 
-            contador++;
-
+        while (!(nota >= 0 && nota <= 10)) {
+            alert("No es una nota valida");
+            nota = parseInt(prompt("Ingrese una nota valida"));
         }
 
-sexo = prompt("Ingrese su sexo: ");
 
-        while(!(sexo=='f'|| sexo=='m')){
 
-            sexo= prompt("Sexo invalido, Ingrese un sexo definido f ó m");
+        while (isNaN(nota)) {
 
+            alert("No es un numero valido");
+            nota = parseInt(prompt("Ingrese una nota valida"));
         }
 
-        suma = suma + notas;
-    promedio = suma / 5; 
+        sexo = prompt("Ingrese su sexo f ó m");
+
+        while (!(sexo == 'f' || sexo == 'm')) {
+
+            alert("No es un sexo valido");
+
+            sexo = prompt("Ingrese un sexo valido");
+        }
+
+        suma = suma + nota;
+
+
+        if (nota < notabaja || flag == 0) { // flag es para que entre si o si.
+
+            notabaja = nota;
+
+            sexobaja = sexo;
+
+            flag = 1;
+        }
+
+
+        if (sexo == 'm' && nota >= 6) {
+
+            notav6++;
+        }
+
+
+
+
+
+        promedio = suma / 5;
 
     }
 
-alert("El promedio es: " + promedio);
+    //A
+    alert("El promedio es: " + promedio + "\n Nota baja: " + notabaja + "\n Sexo con nota baja: " + sexobaja + "\n cant con varones con notas >=6: " + notav6);
+
+
+
+
+
 
 
 
