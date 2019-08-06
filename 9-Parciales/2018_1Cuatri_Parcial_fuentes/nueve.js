@@ -72,23 +72,18 @@ producto = prompt ("Ingrese el producto;")
 
         if( contador == 0){
 
-            pesomax = peso;
-
             pesomin = peso;
         }
 
-        else{
-
-            if(peso>pesomax){
-
-                pesomax = peso;
-            }
-
-            if(peso<pesomin){
+        
+else{
+           
+       if(peso<pesomin){
 
                 pesomin = peso;
             }
 }
+
 
 respuesta = (prompt ("Quiere seguir?"));
 
