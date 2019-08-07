@@ -3,15 +3,17 @@ function mostrar()
 
 var animal;
 var animalpesadonombre;
+var animalpesado;
 var peso;
-var suma;
+var respuesta;
+var suma = 0;
 var temperatura;
 var contador = 0;
 var temperaturapares = 0;
-var animalmaspesado= 0;
+var temperaturapesado =0;
 var menoscerogrado = 0;
-var maximo;
-var minimo;
+var maximo = 0;
+var minimo = 0;
 var promedio;
 
 do{
@@ -49,7 +51,7 @@ if ( peso> animalpesado || contador == 0){
 
     animalpesadonombre = animal;
 
-    animalmaspesado = peso;
+    temperaturapesado = temperatura;
 
     contador =1;
 
@@ -61,24 +63,24 @@ if( temperatura<0){
 }
 
 
-if ( menoscerogrado ){
+if (temperatura<0 ){
 
-maximo = menoscerogrado
+maximo = temperatura;
 
-minimo = menoscerogrado
+minimo = temperatura;
 
 }
 
 else{
 
-if(menoscerogrado>maximo){
+if(temperatura>maximo){
 
-    maximo = menoscerogrado;
+    maximo = temperatura;
 }
 
-if(menoscerogrado<minimo){
+if(temperatura<minimo){
 
-    minimo = menoscerogrado;
+    minimo = temperatura;
 }
 
 }
@@ -96,7 +98,11 @@ promedio = suma /contador;
 
 
 
-document.write ("" "<br>")
+document.write ("Cantidad de temperatura pares: " + temperaturapares + "<br>");
+document.write ("Nombre animal mas pesado: " + animalpesadonombre + " Temperatura: " + temperaturapesado + "<br>" );
+document.write ( "Cant animales que viven a <0grados: " + menoscerogrado  + "<br>");
+document.write ( "Promedio de pesos: " + promedio + "<br>");
+document.write (" peso minimo animales <0: " + minimo + " peso maximo animales <0: " + maximo + "<br>");
 
 
 
